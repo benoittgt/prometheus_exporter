@@ -63,6 +63,8 @@ module PrometheusExporter::Instrumentation
       metric[:major_gc_ops_total] = stat[:major_gc_count]
       metric[:minor_gc_ops_total] = stat[:minor_gc_count]
       metric[:allocated_objects_total] = stat[:total_allocated_objects]
+      metric[:marking_time] = stat[:marking_time]
+      metric[:sweeping_time] = stat[:sweeping_time]
     end
 
     def collect_v8_stats(metric)
